@@ -1,38 +1,197 @@
-.App {
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+html,
+body {
+  padding: 0;
+  margin: 0;
   min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+#container {
+  position: relative;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  min-height: 100vh;
+  background-image: url('./assets/images/bg.png');
+}
+
+#mainText {
+  font-family: "Exo 2", system-ui;
+  font-size: 36px;
+  color: white;
+  font-weight: 200;
+  position: absolute;
+  top: 36px;
+}
+
+#cardHodler {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  gap: 80px;
+}
+
+.card {
+  width: 320px;
+  min-height: 480px;
+  clip-path: polygon(15.9% 0, 100% 0%, 100% 100%, 0 100%, 0 10.5%);
+  position: relative;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  font-family: 'Trebuchet MS', sans-serif;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.defaultCard {
+  border: 4px solid #1698D9;
+}
+.defaultCard:hover{
+  border: 4px solid #2EA8E6;
+}
+.defaultCard:hover .defaultCard::before{
+  border-left: 4px solid #2EA8E6;
+}
+.defaultCard:hover .weightCircle{
+  background-color: #2EA8E6;
+}
+.defaultCard::before {
+  border-left: 4px solid #1698D9;
+}
+
+.selectedCard {
+  border: 4px solid #D91667;
+}
+.selectedCard::before{
+  border-left: 4px solid #D91667;
+}
+.selectedCard:hover{
+  border: 4px solid #E52E7A;
+}
+.selectedCard:hover .selectedCard::before{
+  border-left: 4px solid #E52E7A;
+}
+.selectedCard:hover .weightCircle.selected{
+  background-color: #E52E7A;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: -18px;
+  left: 9px;
+  width: 10px;
+  height: 110px;
+  transform: rotate(45deg)
+}
+
+.cardImage {
+  width: 368px;
+  height: 360px;
+  position: absolute;
+  bottom: -88px;
+  background-repeat: no-repeat;
+}
+
+.cat {
+  background-image: url('./assets/images/cat.png');
+}
+
+.textBlock {
+  position: absolute;
+  left: 51px;
+  top: 21px;
+}
+
+.smallText {
+  font-size: 16px;
+  color: #666666;
+}
+
+.topCardText {
+  margin-bottom: 8px;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: bold;
+  color: #000000;
+}
+
+.subTitle {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000000;
+}
+
+.cardDetails {
+  margin-top: 12px;
+}
+
+.weightCircle {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  justify-content: center;
+  flex-direction: column;
+  width: 80px;
+  border-radius: 100%;
+  background-color: #1698D9;
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  color: white;
+  transition: 0.2s;
+
+}
+.weightCircle.selected{
+  background-color: #D91667
+}
+.weight {
+  font-size: 42px;
+}
+
+.kilogram {
+  position: relative;
+  bottom: 6px;
+  font-weight: 100;
+  font-size: 19px;
+}
+
+.bottomCardText {
+  font-size: 13px;
+  margin-top: 15px;
+  text-align: center;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.bottomCardText a {
+  color: #1698D9;
+  text-decoration: underline dashed;
+  cursor: pointer;
+} 
+@media (max-width: 1140px) { 
+  #container{
+    flex-direction: column;
+  }
+  #cardHodler{
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  #mainText{
+    position: unset;
+    margin: 30px 0;
+    font-size: 30px;
+  }
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@media (max-width: 412px) { 
+  #mainText{
+    margin: 25px 0;
+    }
 }
