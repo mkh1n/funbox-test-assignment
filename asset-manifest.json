@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/funbox-test-assignment/static/css/main.1df62ad1.css",
+    "main.js": "/funbox-test-assignment/static/js/main.a35cab62.js",
+    "static/media/cat.png": "/funbox-test-assignment/static/media/cat.6c0d48a92471b78a8883.png",
+    "static/media/bg.png": "/funbox-test-assignment/static/media/bg.7d6f6bb5fb074bb068f7.png",
+    "index.html": "/funbox-test-assignment/index.html",
+    "main.1df62ad1.css.map": "/funbox-test-assignment/static/css/main.1df62ad1.css.map",
+    "main.a35cab62.js.map": "/funbox-test-assignment/static/js/main.a35cab62.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1df62ad1.css",
+    "static/js/main.a35cab62.js"
+  ]
+}
